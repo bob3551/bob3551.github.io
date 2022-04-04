@@ -3,6 +3,7 @@ div {
   font-size: 15px;
   background-color: lightseagreen;
   border: 5px solid red;
+  text-align: center;
 }
 body {
   background-color: lightgoldenrodyellow;
