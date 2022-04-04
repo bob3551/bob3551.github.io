@@ -1,1 +1,27 @@
+div {
+  border: 1px solid red;
+  font-family: Arial;
+  padding: 8px 15px;
+  font-size: 11px;
+  height: inherit;
+}
+body {
+  background-color: lightgoldenrodyellow;
 
+}
+.z {
+  font-family: Courier;
+
+}
+.c {
+  font-family: monospace;
+  border: 2px solid green;
+  padding: 1px 4px;
+  font-size: 10px;
+  text-align: center;
+
+}
+
+.center {
+  text-align: center;
+}
