@@ -1,12 +1,12 @@
 div {
-  border: 1px solid red;
-  font-family: Arial;
-  padding: 8px 15px;
-  font-size: 11px;
-  height: inherit;
+  font-family: Courier;
+  font-size: 15px;
+  background-color: lightseagreen;
+  border: 5px solid red;
 }
 body {
   background-color: lightgoldenrodyellow;
+  font-family: Arial;
 
 }
 .z {
