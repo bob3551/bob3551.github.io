@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<style>
+.e {
+  font-family: "Shadows into Light", "Courier New", monospace;
+}
+</style>
+  <body class="e">
+    <h2>Money Clicker #clicker #money #pepper #the-block-cat</h2>
+	<h6>made by @pepper / @the-block-cat</h6>
+      <center>
+      <button onclick="x = x + y; document.getElementById('number').innerHTML = x"><img src='https://bnz05pap001files.storage.live.com/y4meNthQO9_kM0kfYmxPM98u2ug9VEnMlAW6RD9M-rRvEXqBL5oQEqit3-C1YMqx5s2XkrpdXgzmoplJP8b89NjJKTafzn-2E68e-rqG2j44lxZbhd7zLUXJTxBZp3C8bM_fdcnUel9_k2mBYdR3jF1zI-M6ezUedFL5-waB8DVdNCd9bFb0WlTC4gRjBY_nfQt7bPOV4J_oU2ubuQfL4P_JN0esILMfesMiPBkz-gJa54?encodeFailures=1&width=155&height=141'></button>
+      <br>
+      <h2>$<b id="number"></b></h2>
+      <h4>Money per click: <b id="number2"></b></h4>
+      <h4><s>Money per second: <b id="number3"></b></s> (not available yet)</h4>
+      </center>
+    <hr>
+    <h3>Upgrades</h3>
+    <br>
+      <button onclick="if (x >= 3000) { if (item1 < 1) { x = x - 3000; item1 = item1 + 1; document.getElementById('number').innerHTML = x; document.getElementById('item1q').innerHTML = Math.round(item1); alert('Discount applied! However, the shop will still show the original price.'); item2cost = 9; item3cost = 90; item4cost = 450; item5cost = 900; item6cost = 4500} else {alert('You can only buy this once');}} else {alert('You are short on money to buy this item');}" class="e"><b>Featured</b> Get 10% off in the shop | Cost: $3k<br>Discount not possible on this item. Items like this can only be purchased once.<br>Costs will be down by 10%, excluding this</button>&nbsp;
+      x<b id="item1q"></b>
+      <br>
+
+      <h4>Money per Click:</h4>
+      <br>
+      <button class="e" onclick="if (x >= item2cost) {y = y + 1; x = x - item2cost; item2 = item2 + 1; document.getElementById('number').innerHTML = x; document.getElementById('item2q').innerHTML = Math.round(item2); document.getElementById('number2').innerHTML = y;} else {alert('You are short on money to buy this item');}">Level 1 | Cost: $10<br> With discount: $9<br>Increases "money per click" by +1</button>&nbsp;
+      x<b id="item2q"></b>
+      <br>
+
+      <br>
+      <button class="e" onclick="if (x >= item3cost) {y = y + 15; x = x - item3cost; item3 = item3 + 1; document.getElementById('number').innerHTML = x; document.getElementById('item3q').innerHTML = Math.round(item3); document.getElementById('number2').innerHTML = y;} else {alert('You are short on money to buy this item');}">Level 2 | Cost: $100<br> With discount: $90<br>Increases "money per click" by +15</button>&nbsp;
+      x<b id="item3q"></b>
+      <br>
+
+      <br>
+      <button class="e" onclick="if (x >= item4cost) {y = y + 65; x = x - item4cost; item4 = item4 + 1; document.getElementById('number').innerHTML = x; document.getElementById('item4q').innerHTML = Math.round(item4); document.getElementById('number2').innerHTML = y;} else {alert('You are short on money to buy this item');}">Level 3 | Cost: $500<br> With discount: $450<br>Increases "money per click" by +65</button>&nbsp;
+      x<b id="item4q"></b>
+      <br>
+
+      <br>
+      <button class="e" onclick="if (x >= item5cost) {y = y + 125; x = x - item5cost; item5 = item5 + 1; document.getElementById('number').innerHTML = x; document.getElementById('item5q').innerHTML = Math.round(item5); document.getElementById('number2').innerHTML = y;} else {alert('You are short on money to buy this item');}">Level 4 | Cost: $1k<br> With discount: $900<br>Increases "money per click" by +125</button>&nbsp;
+      x<b id="item5q"></b>
+      <br>
+
+      <br>
+      <button class="e" onclick="if (x >= item6cost) {y = y + Math.floor(Math.random() * 1000); x = x - item6cost; item6 = item6 + 1; document.getElementById('number').innerHTML = x; document.getElementById('item6q').innerHTML = Math.round(item6); document.getElementById('number2').innerHTML = y;} else {alert('You are short on money to buy this item');}">Level 5 | Cost: $5k<br> With discount: $4.5k<br>Increases "money per click" by +1 - +1000</button>&nbsp;
+      x<b id="item6q"></b>
+      <br>
+      <hr>
+      <br>
+        <script>
+        var x = 0;
+        var y = 1;
+        var z = 0;
+        var item1 = 0;
+        var item2 = 0;
+        var item3 = 0;
+        var item4 = 0;
+        var item5 = 0;
+        var item6 = 0;
+        var item2cost = 10;
+        var item3cost = 100;
+        var item4cost = 500;
+        var item5cost = 1000;
+        var item6cost = 5000;
+        document.getElementById("number").innerHTML = Math.round(x);
+        document.getElementById("item1q").innerHTML = Math.round(item1);
+        document.getElementById("item2q").innerHTML = Math.round(item2);
+        document.getElementById("item3q").innerHTML = Math.round(item3);
+        document.getElementById("item4q").innerHTML = Math.round(item4);
+        document.getElementById("item5q").innerHTML = Math.round(item5);
+        document.getElementById("item6q").innerHTML = Math.round(item6);
+        document.getElementById("number2").innerHTML = Math.round(y);
+        document.getElementById("number3").innerHTML = Math.round(z);
+        </script>
+  </body>
+</html>
