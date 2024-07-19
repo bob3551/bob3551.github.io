@@ -1,0 +1,42 @@
+
+
+/* Place your CSS styles in this file */
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #1a7805; /*I named this color*/
+  background-color: #2c99cf; /*This too*/
+}
+/*
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #6a6a6a;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
