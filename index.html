@@ -1,75 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
-	<head>
-    	<title>The Blog</title>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+        <title>Falling For You eBook</title>
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
     </head>
-    <style>
-    	.body {
-            font-family: Shadows Into Light;
+
+    <body style="background-color: azure" onload="openTab(event, 'Start')">
+        <!-- Title -->
+        <h1><center>Falling For You</center></h1>
+        <h3><center>A novella</center></h3>
+
+        <!-- Notifications -->
+        <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom">
+            <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+            <i class="fa fa-remove"></i>
+            </span>
+            <p><strong><b style="color: green">PINNED</b>: Schedule</strong></p>
+            <p>Part 1 will be released on August 1, 2024 at noon Eastern time</p>
+        </div>
+        <br>
+
+        <!-- Actual eBook -->
+        <!-- Tabs -->
+        <h3>Read the Book</h3>
+        <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'c0')">Prologue</button>
+        <button class="tablinks" onclick="openTab(event, 'c1')">Part 1</button>
+        <button class="tablinks" onclick="openTab(event, 'c2')">Part 2</button>
+        </div>
+        <!-- Prologue -->
+        <div id="c0" class="tabcontent">
+            <h2>Prologue (Character introductions)</h2>
+            <p><b>Eloise Beaumont</b> was born 22 July 1992 into a rich family in Palto Alto, California. She was the best in the class until second grade (1999 – 2000), when she witnessed a school bully, Alice (4th grade at that time) walking by. Everyone suddenly shushed and bowed to her, but Eloise. She almost got beat up for not bowing to her. Eloise started to realize that popularity could be earned by fear – and she started thus being a bully. In January 2001, Alice was defeated by Eloise, and the victor decided to make a gang of bullies. Even though Eloise was told on many times, her rich parents always fish her out from the drain of danger. The horrible part was she made people do her bidding the whole day; they were treated as her “playthings”. After getting beaten up many times by “weak people” in 2007, Eloise decided to step away from bullying and focus on her academics once more. After graduating high school, finishing college, and pursuing a career of finance for more than five years, she started to date Stephane, a medical school student, in 2016.</p>
+            <p><b>Stephane Renard</b> was born 26 July 1994, with a birthday 4 days after Eloise, into a middle-class family in San Francisco, California. Books were quite scarce in his family, so he went often to the library to learn more. He would borrow 10 to 15 books at a time, learning about different aspects – by the age of 9, he learned all the words necessary to take the SAT. When he saw the 9/11 attack in 2001, he briefly thought of being a soldier, but unfortunately, his weakness was his strength. Instead, he decided to be a medical school student and went to Stanford for four years, finishing in 2018. After opening three clinics between 2018 to 2020, the COVID-19 pandemic hit, and his business detoured to helping COVID-19 victims, which was a successful endeavor. After his relationship with Eloise fell apart in 2017, he started dating Katz Ridner, the receptionist of his clinic in the story. After it fell apart in 2021 due to a disagreement over toilet paper supplies, he started trying to date Melissa Blackburne, a doctor in his clinic. She didn’t have much interest for him in the beginning, but it kind of caught on. The couple broke up due to Melissa’s disagreement on the future of the clinic.</p>
+        </div>
+        <!-- Part 1 -->
+        <div id="c1" class="tabcontent">
+            <h2>Part 1</h2>
+            <p>Scheduled to be released August 1, 2024</p>
+        </div>
+        <!-- Part 2 -->
+        <div id="c2" class="tabcontent">
+            <p>Scheduled to be released August 8, 2024</p>
+        </div>
+    <br>
+   <!-- Load external JavaScript -->
+    <script src="scripts.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
-        .2cc9ff
-    </style>
-	<body class="body">
-    <!-- The Blog header -->
-    	<table style="background-color:lightseagreen;width:100%;padding:5px 5px 5px 5px">
-          <tr>
-            <td><h2>The Blog</h2></td>
-            <td><h3>Made by @the-block-cat</h3></td>
-            <td><h3><a href="#">Home</a></h3></td>
-            <td><h3><a href="#">Blogs</a></h3></td>
-            <td><h3><a href="#">Games</a></h3></td>
-            <td><h3><a href="#">More</a></h3></td>
-          </tr>
-        </table>
-       <br>
-       
-       <!-- Updates and notifications go here -->
-       <table style="width:100%;padding:5px 5px 5px 5px;background-color:#2c99cf; font-family: Arial">
-         <tr>
-           <td>
-             <h4>UPDATES</h4>
-             <h5>System updates at April 16, 2023 at 1pm EST!</h5>
-           </td>
-         </tr>
-       </table>
-       
-      <!-- The Blog Recent Posts -->
-      <!-- Most recent 2 posts here -->
-      <table style="width:100%;padding:5px 5px 5px 5px;height:100%;">
-      <h2>Recent Posts</h2>
-      <tr>
-      	<td><img src="#"; width="100%"></img><br>
-        <h3><a href="#">Lorem ipsum!</a></h3>
-        <br>In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. 
-        </td>
-        <td><img src="#"; width="100%"></img><br>
-        <h3><a href="#">Lorem ipsum!</a></h3>
-        <br>In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. 
-        </td>
-      </tr>
-      </table>
-      
-      <!-- Recent 2 games -->
-      <table style="width:100%;padding:5px 5px 5px 5px;height:100%;">
-      <h2>Recent Games</h2>
-      <tr>
-      	<td><img src="#"; width="100%"></img><br>
-        <h3><a href="#">Lorem ipsum!</a></h3>
-        <br>In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. 
-        </td>
-        <td><img src="#"; width="100%"></img><br>
-        <h3><a href="#">Lorem ipsum!</a></h3>
-        <br>In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. In memoriam: meus bacculum et sacculum. 
-        </td>
-      </tr>
-      </table>
-      
-      <!-- footer -->
-      <table style="width:100%;padding:5px 5px 5px 5px;background-color:lightseagreen;">
-      <tr>
-      	<td style="text-align:center">Made by @the-block-cat</td>    
-          <a href="clicker.html">Clicker</a>
-      </tr>
-       </table>
+    </script>
     </body>
 </html>
