@@ -1,72 +1,44 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <title>Mock Comp Examination Archive</title>
   <style>
-    /* Base reset */
     html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
     }
 
-    /* Centering container */
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
-    /* Scrollable list wrapper */
     .list-wrapper {
       width: 500px;
       max-height: 600px;
       overflow-y: auto;
       background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       padding: 1rem;
     }
 
-    /* Scrollbar styling (optional) */
-    .list-wrapper::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .list-wrapper::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 4px;
-    }
-
-    /* List style */
     ul.scrollable-list {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
 
     ul.scrollable-list li {
       background-color: #f9f9f9;
       padding: 15px;
       margin-bottom: 10px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
-    ul.scrollable-list li:hover {
-      background-color: #e0e0e0;
-    }
-
-    ul.scrollable-list li:last-child {
-      margin-bottom: 0;
-    }
   </style>
 </head>
 <body>
-  <div class="container" style="height:90%">
+  <div class="container" style="height:100%">
     <div class="list-wrapper">
     <center><h1>Examination Archive</h1></center>
       <ul class="scrollable-list">
@@ -83,6 +55,13 @@
       </ul>
     </div>
   </div>
+<script>
+  // Function to generate a random hex color
+  function getRandomColor() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0'); }
 
-
-</body></html>
+  // Apply it to the body background
+  document.body.style.backgroundColor = getRandomColor();
+</script>
+</body>
+</html>
