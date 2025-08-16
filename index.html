@@ -1,4 +1,4 @@
-<html lang="en">
+ <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Mock Comps (Pseudocarbonates)</title>
@@ -53,15 +53,12 @@
       	<li style="background-color: #90ee90">  <center>
   <div style="width:414px; length:618px; text-align:center">
     <h4>Have a great summer!</h4>
-    <h1 id="demo"></h1>
+    <h1 id="demo">Bellevue: Loading</h1>
+    <h1 id="demoBOTHELL">Bothell: Loading</h1>
     <small id="yippy"></small>
   </div>
 </center></li>
-        <li style="background-color: #990f02">Most 7th grade forms and tests have been taken down. If you need them in the future for whatever good reason, contact matcha1618@hotmail.com. Be prepared to wait for up to 1 week for me to check my email. I have multiple...</li>
-        <li style="background-color: #2c99cf">8 June 2025 (#12)<br>(avg: 32.5/43, 75.6%): <br><a href="https://drive.google.com/file/d/1XITnW50vIxvHWT_8XnNmWXBB_sZ7xe6t/view?usp=sharing">Biology 7 Test 3 (Common version)</a><br><a href="https://forms.office.com/r/Yd2GAEGN9h">Form</a><br></li>
-        <li style="background-color: #ffa03b">1 June 2025 (#10) (Fast mode, 10 minutes)  (Most taken)<br>(avg: 17.4/22, 79.2%): <br><a href="https://drive.google.com/file/d/1HkG8MoTAi1gXq83a83MxBc_kvej4ylPA/view?usp=sharing">English 7 Test 2</a><br><a href="https://forms.office.com/r/7ZA20Y6HWs">Form (10 minutes only, if you don't want this then do the test on paper for 20 minutes, then input your answers for 10 minutes)</a><br></li>
-        <li style="background-color: #dce3fa">25 May 2025 (#8)<br>(avg: 18.5/30, 61.7%): <br><a href="https://drive.google.com/file/d/1e3ezTwYZT4JPDWaWe5DX65UETLAS8iS_/view?usp=sharing">World History II 1</a><br><a href="https://forms.cloud.microsoft/r/ur1meD4cSe">Form (answers shown after you submit)</a></li>
-        <li style="background-color: #ff0a16">13 April 2025 (#1)<br>(avg: 63/125, 50.4%, bonus added: 10): <br><a href="https://drive.google.com/file/d/1S6UFQ5Sj-2Uf_8DAgHUGz7qkZbtmE4kG/view?usp=sharing">Latin IIA Test 1</a><br></li>
+        <li style="background-color: white; color: black"><h3>All 7th grade forms and tests have been taken down since 15 August 2025. If you need them in the future for whatever good reason, contact <a href="mailto:matcha1618@hotmail.com">matcha1618@hotmail.com</a>. Please allow up to 72 hours for me to check my email.</h3></li>
       </ul>
     </div>
   </div>
@@ -82,21 +79,28 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance / 1000) % 60);
   var t = Math.floor((Math.random() * 100) + 1);
 
-  document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s";   
-  document.getElementById("yimpy").innerHTML = "Time remaining (in ms): " + distance;   
-  document.getElementById("yippy").innerHTML = "This timer ends at: " + timeEnds;
-  document.getElementById("wispy").innerHTML = t;
+  document.getElementById("demo").innerHTML = "Bellevue: " + minutes + "m " + seconds + "s";   
   if (distance <= 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "The test has ended";
-    
-    var y = setInterval(function() {
-      var now_timeout = new Date().getTime();
-      var distance_timeout = now_timeout - countDownDate;
-      var minutes_timeout = Math.floor(distance_timeout / 1000 / 60);
-      var seconds_timeout = Math.floor((distance_timeout / 1000) % 60);  
-      document.getElementById("yimpy").innerHTML = "Overflow: " + minutes_timeout + "m " + seconds_timeout + "s";   
-  }, 1);
+    document.getElementById("demo").innerHTML = "Bellevue: The time has ended";
+  }
+}, 1);
+
+
+var timeEndsBOTHELL = "Sep 01, 2025 08:05:00";
+var countDownDateBOTHELL = new Date(timeEndsBOTHELL).getTime();
+
+var xBOTHELL = setInterval(function() {
+  var nowBOTHELL = new Date().getTime();
+  var distanceBOTHELL = countDownDateBOTHELL - nowBOTHELL;
+  var minutesBOTHELL = Math.floor(distanceBOTHELL / 1000 / 60);
+  var secondsBOTHELL = Math.floor((distanceBOTHELL / 1000) % 60);
+  var tBOTHELL = Math.floor((Math.random() * 100) + 1);
+
+  document.getElementById("demoBOTHELL").innerHTML = "Bothell: " + minutesBOTHELL + "m " + secondsBOTHELL + "s";   
+  if (distanceBOTHELL <= 0) {
+    clearInterval(xBOTHELL);
+    document.getElementById("demoBOTHELL").innerHTML = "Bothell: The time has ended";
   }
 }, 1);
 </script>
