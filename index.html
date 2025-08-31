@@ -49,16 +49,9 @@
   <div class="container" style="height:100%">
    <div class="list-wrapper">
       <ul class="scrollable-list">
-      <center><h1>Past Problems</h1></center>
-      	<li style="background-color: #90ee90">  <center>
-  <div style="width:414px; length:618px; text-align:center">
-    <h4>Have a great summer!</h4>
-    <h1 id="demo">Bellevue: Loading</h1>
-    <h1 id="demoBOTHELL">Bothell: Loading</h1>
-    <small id="yippy"></small>
-  </div>
-</center></li>
-        <li style="background-color: white; color: black"><h3>All 7th grade forms and tests have been taken down since 15 August 2025. If you need them in the future for whatever good reason, contact <a href="mailto:matcha1618@hotmail.com">matcha1618@hotmail.com</a>. Please allow up to 72 hours for me to check my email.</h3></li>
+      <center><h1>Current Sets and Tests</h1></center>
+        <li style="background-color: white; color: black"><p>Looking for any tests/sets (7th grade: 12, 8th grade: 0) that are not listed here? Please contact <a href="mailto:matcha1618@hotmail.com">matcha1618@hotmail.com</a> and please wait for up to 3 business days for my response.</p></li>
+        <li style="background-color: #ed9f78; color: black"><h3>Latin IIB</h3><br><a href="https://drive.google.com/file/d/1M_YZkbxsqKySbaqcAZQK6zqYi_Sy2jnX/view?usp=sharing">28/08/2025: Set #1 (Y2808-0171)</a></li>
       </ul>
     </div>
   </div>
@@ -83,24 +76,6 @@ var x = setInterval(function() {
   if (distance <= 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "Bellevue: The time has ended";
-  }
-}, 1);
-
-
-var timeEndsBOTHELL = "Sep 10, 2025 08:05:00";
-var countDownDateBOTHELL = new Date(timeEndsBOTHELL).getTime();
-
-var xBOTHELL = setInterval(function() {
-  var nowBOTHELL = new Date().getTime();
-  var distanceBOTHELL = countDownDateBOTHELL - nowBOTHELL;
-  var minutesBOTHELL = Math.floor(distanceBOTHELL / 1000 / 60);
-  var secondsBOTHELL = Math.floor((distanceBOTHELL / 1000) % 60);
-  var tBOTHELL = Math.floor((Math.random() * 100) + 1);
-
-  document.getElementById("demoBOTHELL").innerHTML = "Bothell: " + minutesBOTHELL + "m " + secondsBOTHELL + "s";   
-  if (distanceBOTHELL <= 0) {
-    clearInterval(xBOTHELL);
-    document.getElementById("demoBOTHELL").innerHTML = "Bothell: The time has ended";
   }
 }, 1);
 </script>
