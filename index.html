@@ -1,85 +1,68 @@
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Problem Documents and Sets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚨 Under construction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    html, body {
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+    }
+
+    .dialog-box {
+      background-color: white;
+      color: black;
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      transform: translateY(-100vh);
+      opacity: 0;
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
     }
     
-    .list-wrapper::-webkit-scrollbar {
-      width: 8px;
+	.falling-letter {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      font-weight: bold;
+      animation: fall linear;
+      pointer-events: none;
     }
-
-    .list-wrapper::-webkit-scrollbar-thumb {
-      background: #ccc;
-      border-radius: 4px;
+    
+    .dialog-box.show {
+      transform: translateY(0);
+      opacity: 1;
     }
-    .list-wrapper {
-      width: 75%;
-      max-height: 100%;
-      overflow-y: auto;
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 1rem;
-    }
-
-    ul.scrollable-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.scrollable-list li {
-      background-color: #f9f9f9;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    }
-
   </style>
 </head>
 <body>
-  <div class="container" style="height:100%;">
-   <div class="list-wrapper" style="background-color: #ed9f78">
-      <ul class="scrollable-list">
-      <center><h1>Current Sets and Tests</h1></center>
-      
-        <li style="background-color: white; color: black"><p>Looking for any tests/sets (7th grade: 12, 8th grade: 0) that are not listed here? Please contact <a href="mailto:matcha1618@hotmail.com">matcha1618@hotmail.com</a> and please wait for up to 3 business days for my response.</p></li>
-        
-         <li style="background-color: #ff190d;">28 August 2025<br>(avg: -/13, -%): <br><a href="https://drive.google.com/file/d/1M_YZkbxsqKySbaqcAZQK6zqYi_Sy2jnX/view?usp=sharing">Set 1 (Y28080171)</a><br><a href="https://forms.cloud.microsoft/r/rWdkA1CNug">Form</a><br></li>
-       </ul>
-    </div>
+  <div class="dialog-box" id="dialog">
+    <h2>Hi!</h2>
+    <p>This website is currently been renovated, and currently has no content. Please visit my other websites first; <a href="https://yimpy.w3spaces.com">a clicker (early 2025)</a>, <a href="https://readnedit.w3spaces.com">an old website I made in early 2022</a>, and <a href="redirectly.w3spaces.com">here (for testing purposes only)</a>.</p>
+    <button class="btn btn-dark" onclick="dismissDialog()">Dismiss</button>
   </div>
-<script>
-  // Function to generate a random hex color
-  function getRandomColor() {
-    return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0'); }
 
-  // Apply it to the body background
-  document.body.style.backgroundColor = getRandomColor();
-var timeEnds = "Aug 26, 2025 08:05:00";
-var countDownDate = new Date(timeEnds).getTime();
+  <script>
+    const dialog = document.getElementById('dialog');
 
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var minutes = Math.floor(distance / 1000 / 60);
-  var seconds = Math.floor((distance / 1000) % 60);
-  var t = Math.floor((Math.random() * 100) + 1);
+    setTimeout(() => {
+      dialog.classList.add('show');
+    }, 500);
 
-  document.getElementById("demo").innerHTML = "Bellevue: " + minutes + "m " + seconds + "s";   
-  if (distance <= 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "Bellevue: The time has ended";
-  }
-}, 1);
-</script>
+    function dismissDialog() {
+      dialog.classList.remove('show');
+      setTimeout(() => {
+        document.body.style.backgroundColor = 'black';
+      }, 400);
+    }
+  </script>
 </body>
 </html>
