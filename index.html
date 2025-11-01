@@ -44,7 +44,7 @@
     }
   </style>
 </head>
-<body onload="spawnHAWall()">
+<body onload="evilLaughSpam();">
   <div class="dialog-box" id="dialog">
     <h2>Hi!</h2>
     <p>This website is currently been renovated, and currently has no content. Please visit my other websites first; <a href="https://yimpy.w3spaces.com">a clicker (early 2025)</a>, <a href="https://readnedit.w3spaces.com">an old website I made in early 2022</a>, and <a href="https://redirectly.w3spaces.com">here (for testing purposes only)</a>.</p>
@@ -64,6 +64,16 @@
         document.body.style.backgroundColor = 'black';
       }, 400);
     }
+	function showFloating(e, text) {
+	    const span = document.createElement("span");
+	    span.className = "floating-coin";
+	    span.textContent = text;
+	    document.body.appendChild(span);
+	    span.style.left = e.clientX + "px";
+	    span.style.top = e.clientY + "px";
+	    span.addEventListener("animationend", () => span.remove());
+  	}
+	  
 	function evilLaughSpam() {
 	  let count = Math.floor(Math.random() * 30) + 20; // 20–50 HA's
 	
