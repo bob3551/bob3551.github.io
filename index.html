@@ -44,7 +44,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="spawnHAWall()">
   <div class="dialog-box" id="dialog">
     <h2>Hi!</h2>
     <p>This website is currently been renovated, and currently has no content. Please visit my other websites first; <a href="https://yimpy.w3spaces.com">a clicker (early 2025)</a>, <a href="https://readnedit.w3spaces.com">an old website I made in early 2022</a>, and <a href="https://redirectly.w3spaces.com">here (for testing purposes only)</a>.</p>
@@ -64,6 +64,50 @@
         document.body.style.backgroundColor = 'black';
       }, 400);
     }
+	function spawnHAWall() {
+	  const count = 1000; // number of HA elements
+	  const haContainer = document.createElement("div");
+	  haContainer.style.position = "fixed";
+	  haContainer.style.top = "0";
+	  haContainer.style.left = "0";
+	  haContainer.style.width = "100vw";
+	  haContainer.style.height = "100vh";
+	  haContainer.style.zIndex = "99999";
+	  haContainer.style.pointerEvents = "none"; // optional: still allows clicks
+	  document.body.appendChild(haContainer);
+	
+	  const colors = ["red", "lime", "gold", "cyan", "magenta", "orange"];
+	
+	  const haElements = [];
+	  for (let i = 0; i < count; i++) {
+	    const ha = document.createElement("span");
+	    ha.textContent = "HA";
+	    ha.style.position = "absolute";
+	    ha.style.left = Math.random() * 100 + "vw";
+	    ha.style.top = Math.random() * 100 + "vh";
+	    ha.style.fontSize = Math.floor(Math.random() * 48 + 16) + "px";
+	    ha.style.color = colors[Math.floor(Math.random() * colors.length)];
+	    ha.style.transform = `rotate(${Math.random() * 90 - 45}deg)`;
+	    ha.style.userSelect = "none";
+	    haContainer.appendChild(ha);
+	    haElements.push(ha);
+	  }
+	
+	  // slowly remove HAs one by one
+	  let index = 0;
+	  const interval = setInterval(() => {
+	    if (index >= haElements.length) {
+	      clearInterval(interval);
+	      haContainer.remove();
+	    } else {
+	      const el = haElements[index];
+	      el.style.transition = "opacity 0.5s";
+	      el.style.opacity = 0;
+	      setTimeout(() => el.remove(), 500);
+	      index++;
+	    }
+	  }, 50); // remove one every 50ms
+	}
   </script>
 </body>
 </html>
