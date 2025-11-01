@@ -64,50 +64,47 @@
         document.body.style.backgroundColor = 'black';
       }, 400);
     }
-	function spawnHAWall() {
-	  const count = 1000; // number of HA elements
-	  const haContainer = document.createElement("div");
-	  haContainer.style.position = "fixed";
-	  haContainer.style.top = "0";
-	  haContainer.style.left = "0";
-	  haContainer.style.width = "100vw";
-	  haContainer.style.height = "100vh";
-	  haContainer.style.zIndex = "99999";
-	  haContainer.style.pointerEvents = "none"; // optional: still allows clicks
-	  document.body.appendChild(haContainer);
+	function evilLaughSpam() {
+	  let count = Math.floor(Math.random() * 30) + 20; // 20–50 HA's
 	
-	  const colors = ["red", "lime", "gold", "cyan", "magenta", "orange"];
-	
-	  const haElements = [];
 	  for (let i = 0; i < count; i++) {
-	    const ha = document.createElement("span");
-	    ha.textContent = "HA";
-	    ha.style.position = "absolute";
-	    ha.style.left = Math.random() * 100 + "vw";
-	    ha.style.top = Math.random() * 100 + "vh";
-	    ha.style.fontSize = Math.floor(Math.random() * 48 + 16) + "px";
-	    ha.style.color = colors[Math.floor(Math.random() * colors.length)];
-	    ha.style.transform = `rotate(${Math.random() * 90 - 45}deg)`;
-	    ha.style.userSelect = "none";
-	    haContainer.appendChild(ha);
-	    haElements.push(ha);
-	  }
+	    setTimeout(() => {
+	      // 🎯 random coordinates (relative to viewport)
+	      let fakeEvent = { 
+	        clientX: Math.random() * window.innerWidth, 
+	        clientY: Math.random() * window.innerHeight 
+	      };
 	
-	  // slowly remove HAs one by one
-	  let index = 0;
-	  const interval = setInterval(() => {
-	    if (index >= haElements.length) {
-	      clearInterval(interval);
-	      haContainer.remove();
-	    } else {
-	      const el = haElements[index];
-	      el.style.transition = "opacity 0.5s";
-	      el.style.opacity = 0;
-	      setTimeout(() => el.remove(), 500);
-	      index++;
-	    }
-	  }, 50); // remove one every 50ms
+	      // 🎨 random style
+	      let size = Math.floor(Math.random() * 48) + 16;
+	      let rotation = (Math.random() * 90 - 45).toFixed(1);
+	      let colors = ["red", "lime", "gold", "cyan", "magenta", "orange"];
+	      let color = colors[Math.floor(Math.random() * colors.length)];
+	
+	      // 🌀 main HA
+	      showFloating(fakeEvent, "HA");
+	
+	      // apply random styling
+	      let last = document.querySelector(".floating-coin:last-child");
+	      if (last) {
+	        last.style.fontSize = size + "px";
+	        last.style.transform = `rotate(${rotation}deg)`;
+	        last.style.color = color;
+	        last.style.display = "inline-block";
+	        last.style.position = "fixed"; // 👈 lock to viewport
+	        last.style.left = fakeEvent.clientX + "px";
+	        last.style.top = fakeEvent.clientY + "px";
+	        last.classList.add("ha-shake"); // animation
+	      }
+	    }, i * 100);
+	  }
 	}
+	
+	setInterval(() => {
+	  if (Math.random() < 0.5) {
+	    evilLaughSpam();
+	  }
+	}, 2000);
   </script>
 </body>
 </html>
