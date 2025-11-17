@@ -43,6 +43,18 @@
       transform: translateY(0);
       opacity: 1;
     }
+	  .floating-coin {
+    position: fixed;
+    font-size: 20px;
+    animation: floatUp 1s ease-out forwards;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-40px) scale(1.6); }
+  }
   </style>
 </head>
 <body onload="evilLaughSpam();">
