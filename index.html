@@ -47,7 +47,7 @@
 <body onload="evilLaughSpam();">
   <div class="dialog-box" id="dialog">
     <h2>Hi!</h2>
-    <p>This website is currently been renovated, and currently has no content. Please visit my other websites first; <a href="https://yimpy.w3spaces.com">a clicker (early 2025)</a>, <a href="https://readnedit.w3spaces.com">an old website I made in early 2022</a>, and <a href="https://redirectly.w3spaces.com">here (for testing purposes only)</a>.</p>
+    <p>This website is currently been renovated, and currently has no content. But thank you for checking! :)</p>
     <button class="btn btn-dark" onclick="dismissDialog()">Dismiss</button>
   </div>
 
@@ -65,56 +65,52 @@
       }, 400);
     }
 	function showFloating(e, text) {
-	    const span = document.createElement("span");
-	    span.className = "floating-coin";
-	    span.textContent = text;
-	    document.body.appendChild(span);
-	    span.style.left = e.clientX + "px";
-	    span.style.top = e.clientY + "px";
-	    span.addEventListener("animationend", () => span.remove());
-  	}
-	  
-	function evilLaughSpam() {
-	  let count = Math.floor(Math.random() * 30) + 20; // 20–50 HA's
-	
-	  for (let i = 0; i < count; i++) {
-	    setTimeout(() => {
-	      // 🎯 random coordinates (relative to viewport)
-	      let fakeEvent = { 
-	        clientX: Math.random() * window.innerWidth, 
-	        clientY: Math.random() * window.innerHeight 
-	      };
-	
-	      // 🎨 random style
-	      let size = Math.floor(Math.random() * 48) + 16;
-	      let rotation = (Math.random() * 90 - 45).toFixed(1);
-	      let colors = ["red", "lime", "gold", "cyan", "magenta", "orange"];
-	      let color = colors[Math.floor(Math.random() * colors.length)];
-	
-	      // 🌀 main HA
-	      showFloating(fakeEvent, "HA");
-	
-	      // apply random styling
-	      let last = document.querySelector(".floating-coin:last-child");
-	      if (last) {
-	        last.style.fontSize = size + "px";
-	        last.style.transform = `rotate(${rotation}deg)`;
-	        last.style.color = color;
-	        last.style.display = "inline-block";
-	        last.style.position = "fixed"; // 👈 lock to viewport
-	        last.style.left = fakeEvent.clientX + "px";
-	        last.style.top = fakeEvent.clientY + "px";
-	        last.classList.add("ha-shake"); // animation
-	      }
-	    }, i * 100);
-	  }
-	}
-	
-	setInterval(() => {
-	  if (Math.random() < 0.5) {
-	    evilLaughSpam();
-	  }
-	}, 2000);
+  const span = document.createElement("span");
+  span.className = "floating-coin";
+  span.textContent = text;
+  document.body.appendChild(span);
+
+  span.style.left = e.clientX + "px";
+  span.style.top = e.clientY + "px";
+
+  span.addEventListener("animationend", () => span.remove());
+}
+
+
+function evilLaughSpam() {
+  let count = Math.floor(Math.random() * 30) + 20; // 20–50 HA's
+
+  for (let i = 0; i < count; i++) {
+    setTimeout(() => {
+
+      let fakeEvent = { 
+        clientX: Math.random() * window.innerWidth, 
+        clientY: Math.random() * window.innerHeight 
+      };
+
+      let size = Math.floor(Math.random() * 48) + 16;
+      let rotation = (Math.random() * 90 - 45).toFixed(1);
+      let colors = ["red", "lime", "gold", "cyan", "magenta", "orange"];
+      let color = colors[Math.floor(Math.random() * colors.length)];
+
+      showFloating(fakeEvent, "HA");
+		
+      let last = document.querySelector(".floating-coin:last-child");
+      if (last) {
+        last.style.fontSize = size + "px";
+        last.style.transform = `rotate(${rotation}deg)`;
+        last.style.color = color;
+        last.style.left = fakeEvent.clientX + "px";
+        last.style.top = fakeEvent.clientY + "px";
+      }
+    }, i * 100);
+  }
+}
+
+// run every 5 seconds
+setInterval(() => {
+  evilLaughSpam();
+}, 5000);
   </script>
 </body>
 </html>
